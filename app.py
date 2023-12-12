@@ -49,6 +49,24 @@ st.title('LinkedIn Usage Predictor')
 print('-' * 50)
 ##### Sometimes it seems like the whole world uses LinkedIn. Of course, while it is a popular social networking site and useful for marketing purposes, not everyone uses it. In this project, you are working with the marketing analytics team of your organization and have been tasked with evaluating options for promoting the business on different mediums. Your CEO would like you to analyze data on social media habits among the US public and build a model that takes predicts social media usage--in this case whether someone uses LinkedIn--as a function of individual attributes and demographics. The goal is for the marketing team to use what you create to examine options and platforms to target for marketing campaigns and potential segments of customers. The application must be interactive, publicly hosted, and use machine learning to produce predictions in real-time.
 
+# Define a dictionary that maps numbers to income ranges
+income_options = {
+    1: "1-Less than $10,000",
+    2: "2-10 to under $20,000",
+    3: "3-20 to under $30,000",
+    4: "4-30 to under $40,000",
+    5: "5-40 to under $50,000",
+    6: "6-50 to under $75,000",
+    7: "7-75 to under $100,000",
+    8: "8-100 to under $150,000",
+    9: "9-$150,000 or more"
+}
+
+# Collect user input
+income_range = st.selectbox('Income Range', options=list(income_options.values()))
+
+# Extract the number from the selected income range
+income_range_encoded = int(income_range.split('-')[0])
 # Collecting user inputs
 income_range = st.selectbox('Income Range', options=[1, 2, 3, 4, 5, 6, 7, 8, 9])
 education_level = st.selectbox('Education Level', options=[1, 2, 3, 4, 5, 6, 7, 8])
