@@ -67,6 +67,26 @@ income_range = st.selectbox('Income Range', options=list(income_options.values()
 
 # Extract the number from the selected income range
 income_range_encoded = int(income_range.split('-')[0])
+
+# Define a dictionary that maps numbers to education levels
+education_options = {
+    1: "1-Less than high school (Grades 1-8 or no formal schooling)",
+    2: "2-High school incomplete (Grades 9-11 or Grade 12 with NO diploma)",
+    3: "3-High school graduate (Grade 12 with diploma or GED certificate)",
+    4: "4-Some college, no degree (includes some community college)",
+    5: "5-Two-year associate degree from a college or university",
+    6: "6-Four-year college or university degree/Bachelor’s degree (e.g., BS, BA, AB)",
+    7: "7-Some postgraduate or professional schooling, no postgraduate degree (e.g. some graduate school)",
+    8: "8-Postgraduate or professional degree, including master’s, doctorate, medical or law degree (e.g., MA, MS, PhD, MD, JD)"
+}
+
+# Collect user input
+education_level = st.selectbox('Education Level', options=list(education_options.values()))
+
+# Extract the number from the selected education level
+education_level_encoded = int(education_level.split('-')[0])
+
+
 # Collecting user inputs
 income_range = st.selectbox('Income Range', options=[1, 2, 3, 4, 5, 6, 7, 8, 9])
 education_level = st.selectbox('Education Level', options=[1, 2, 3, 4, 5, 6, 7, 8])
