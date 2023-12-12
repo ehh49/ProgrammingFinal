@@ -40,7 +40,7 @@ y_pred = model.predict(X_test)
 
 
 #STREAMLIT
-
+st.image('.rotating-linkedin-icon_zkzxj8xws_thumbnail-180_01.jpg')
 st.title('LinkedIn Usage Predictor')
 st.subheader('Who Uses LinkedIn?')
 st.subheader('By: Emily Hendrickson') 
