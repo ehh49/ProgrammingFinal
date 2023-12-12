@@ -43,13 +43,28 @@ y_pred = model.predict(X_test)
 
 
 st.markdown
-
+st.title('LinkedIn Usage Predictor')
 #Who Uses LinkedIn?
 ## Building and Deploying a Machine Learning App in Python to Predict LinkedIn Users
 print('-' * 50)
 ##### Sometimes it seems like the whole world uses LinkedIn. Of course, while it is a popular social networking site and useful for marketing purposes, not everyone uses it. In this project, you are working with the marketing analytics team of your organization and have been tasked with evaluating options for promoting the business on different mediums. Your CEO would like you to analyze data on social media habits among the US public and build a model that takes predicts social media usage--in this case whether someone uses LinkedIn--as a function of individual attributes and demographics. The goal is for the marketing team to use what you create to examine options and platforms to target for marketing campaigns and potential segments of customers. The application must be interactive, publicly hosted, and use machine learning to produce predictions in real-time.
 
 The project consists of two parts: (1) Processing and cleaning the data, analyzing it, and building a supervised classification model; and (2) deploying the model to StreamlitLinks to an external site. (on Streamlit cloudLinks to an external site. via GitHub) so that it is publicly available and the URL can be shared with your colleagues.
+
+
+
+# Collecting user inputs
+income_range = st.selectbox('Income Range', options=[1, 2, 3, 4, 5, 6, 7, 8, 9])
+education_level = st.selectbox('Education Level', options=[1, 2, 3, 4, 5, 6, 7, 8])
+parental_status = st.selectbox('Parental Status', options=['Yes', 'No'])
+marriage_status = st.selectbox('Marriage Status', options=['Yes', 'No'])
+female = st.selectbox('Female', options=['Yes', 'No'])
+age = st.slider('Age', min_value=18, max_value=100)
+
+# Encoding binary variables
+parental_status_encoded = 1 if parental_status == 'Yes' else 0
+marriage_status_encoded = 1 if marriage_status == 'Yes' else 0
+female_encoded = 1 if female == 'Yes' else 0
 
 
 
