@@ -62,6 +62,14 @@ parental_status_encoded = 1 if parental_status == 'Yes' else 0
 marriage_status_encoded = 1 if marriage_status == 'Yes' else 0
 female_encoded = 1 if female == 'Yes' else 0
 
+#Predictions
+if st.button('Predict'):
+    prediction = model.predict([features])
+    if prediction[0] == 1:
+        st.write('The person is likely to use LinkedIn.')
+    else:
+        st.write('The person is unlikely to use LinkedIn.')
+
 
 
 
