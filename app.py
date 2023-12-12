@@ -73,7 +73,7 @@ st.markdown
 
 
 print(f'Model Accuracy: {model.score(X_test, y_test)}')
-print(f'Confusion Matrix: \n{cm}')
+
 
 
 
