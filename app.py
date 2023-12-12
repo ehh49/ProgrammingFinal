@@ -110,10 +110,6 @@ with col2:
         else:
             st.write('The person is unlikely to use LinkedIn.')
 
-col1, col2, col3 = st.columns([1,2,1])
-
-with col2:
-    st.write(f'The predicted probabilities are {proba[0]:.2f} for class 0 and {proba[1]:.2f} for class 1.')
 
 
 
