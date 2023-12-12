@@ -64,7 +64,7 @@ female_encoded = 1 if female == 'Yes' else 0
 
 #Predictions
 if st.button('Predict'):
-    prediction = model.predict([features])
+    prediction = y_pred.predict([features])
     if prediction[0] == 1:
         st.write('The person is likely to use LinkedIn.')
     else:
