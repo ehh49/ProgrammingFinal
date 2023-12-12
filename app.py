@@ -42,7 +42,6 @@ y_pred = model.predict(X_test)
 #format to make streamlit look pretty
 
 
-st.markdown
 st.title('LinkedIn Usage Predictor')
 #Who Uses LinkedIn?
 ## By: Emily Hendrickson
