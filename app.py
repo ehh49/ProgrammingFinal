@@ -102,7 +102,7 @@ features = [[income_range_encoded, education_level_encoded, parental_status_enco
 # Predictions
 if st.button('Predict'):
     prediction = model.predict(features)
-    if prediction[0][1] > 0.6:
+    if prediction[0] => .6:
         st.write('The person is likely to use LinkedIn.')
     else:
         st.write('The person is unlikely to use LinkedIn.')
