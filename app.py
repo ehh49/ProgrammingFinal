@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import altair as alt
+import streamlit_scrollable_textbox as stx
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
@@ -38,16 +39,14 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 
-
-#format to make streamlit look pretty
-
+#STREAMLIT
 
 st.title('LinkedIn Usage Predictor')
 #Who Uses LinkedIn?
 ## By: Emily Hendrickson
 ## Building and Deploying a Machine Learning App in Python to Predict LinkedIn Users
 print('-' * 50)
-##### Sometimes it seems like the whole world uses LinkedIn. Of course, while it is a popular social networking site and useful for marketing purposes, not everyone uses it. In this project, you are working with the marketing analytics team of your organization and have been tasked with evaluating options for promoting the business on different mediums. Your CEO would like you to analyze data on social media habits among the US public and build a model that takes predicts social media usage--in this case whether someone uses LinkedIn--as a function of individual attributes and demographics. The goal is for the marketing team to use what you create to examine options and platforms to target for marketing campaigns and potential segments of customers. The application must be interactive, publicly hosted, and use machine learning to produce predictions in real-time.
+stx.scrollableTextbox('Sometimes it seems like the whole world uses LinkedIn. Of course, while it is a popular social networking site and useful for marketing purposes, not everyone uses it. In this project, you are working with the marketing analytics team of your organization and have been tasked with evaluating options for promoting the business on different mediums. Your CEO would like you to analyze data on social media habits among the US public and build a model that takes predicts social media usage--in this case whether someone uses LinkedIn--as a function of individual attributes and demographics. The goal is for the marketing team to use what you create to examine options and platforms to target for marketing campaigns and potential segments of customers. The application must be interactive, publicly hosted, and use machine learning to produce predictions in real-time.') 
 
 # Define a dictionary that maps numbers to income ranges
 income_options = {
