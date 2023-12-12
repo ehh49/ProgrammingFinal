@@ -100,41 +100,17 @@ female_encoded = 1 if female == 'Yes' else 0
 # Creating a feature vector
 features = [[income_range_encoded, education_level_encoded, parental_status_encoded, marriage_status_encoded, female_encoded, age]]
 
-# Predictions
-if st.button('Predict'):
-    prediction = model.predict(features)
-    if prediction[0] >= 0.6:
-        st.write('The person is likely to use LinkedIn.')
-    else:
-        st.write('The person is unlikely to use LinkedIn.')
+col1, col2, col3 = st.columns([1,2,1])
+
+with col2:
+    if st.button('Prediction Activate'):
+        prediction = model.predict(features)
+        if prediction[0] >= 0.6:
+            st.write('The person is likely to use LinkedIn.')
+        else:
+            st.write('The person is unlikely to use LinkedIn.')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-print(f'Model Accuracy: {model.score(X_test, y_test)}')
 
 
 
