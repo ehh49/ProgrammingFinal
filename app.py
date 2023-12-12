@@ -86,14 +86,11 @@ education_level = st.selectbox('Education Level', options=list(education_options
 # Extract the number from the selected education level
 education_level_encoded = int(education_level.split('-')[0])
 
-
 # Collecting user inputs
-income_range = st.selectbox('Income Range', options=[1, 2, 3, 4, 5, 6, 7, 8, 9])
-education_level = st.selectbox('Education Level', options=[1, 2, 3, 4, 5, 6, 7, 8])
 parental_status = st.selectbox('Parental Status', options=['Yes', 'No'])
 marriage_status = st.selectbox('Marriage Status', options=['Yes', 'No'])
 female = st.selectbox('Female', options=['Yes', 'No'])
-age = st.slider('Age', min_value=18, max_value=100)
+age = st.slider('Age', min_value=18, max_value=98)
 
 # Encoding binary variables
 parental_status_encoded = 1 if parental_status == 'Yes' else 0
