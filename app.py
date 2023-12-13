@@ -97,24 +97,16 @@ parental_status_encoded = 1 if parental_status == 'Yes' else 0
 marriage_status_encoded = 1 if marriage_status == 'Yes' else 0
 female_encoded = 1 if female == 'Yes' else 0
 
-# Creating a feature vector
-features = [[income_range_encoded, education_level_encoded, parental_status_encoded, marriage_status_encoded, female_encoded, age]]
-
-# Centered button for prediction
-col1, col2, col3 = st.beta_columns([1,2,1])
-
-with col2:
-    if st.button('Prediction'):     
-        # Make prediction     
-        prediction = model.predict(features)       
-        # Get predicted probabilities     
-        proba = model.predict_proba(features)[0]       
-        # Show prediction       
-        if prediction[0] == 1:         
-            st.write(f'The model predicts the person is likely to use LinkedIn, with a probability of {proba[1]:.2%}')     
-        else:         
-            st.write(f'The model predicts the person is unlikely to use LinkedIn, with a probability of {proba[0]:.2%}')
-
-
-
-
+# Button for prediction
+if st.button('Prediction'):
+    # Make prediction
+    prediction = model.predict(features)
+ 
+    # Get predicted probabilities
+    proba = model.predict_proba(features)[0]
+ 
+    # Show prediction  
+    if prediction[0] == 1:
+        st.write(f'The model predicts the person is likely to use LinkedIn, with a probability of {proba[1]:.2%}')
+    else:
+        st.write(f'The model predicts the person is unlikely to use LinkedIn, with a probability of {proba[0]:.2%}')
