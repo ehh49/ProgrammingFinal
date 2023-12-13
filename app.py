@@ -87,8 +87,8 @@ education_level = st.selectbox('Education Level', options=list(education_options
 education_level_encoded = int(education_level.split('-')[0])
 
 # Collecting user inputs
-parental_status = st.selectbox('Parenthood', options=['Yes', 'No'])
-marriage_status = st.selectbox('Married', options=['Yes', 'No'])
+parental_status = st.selectbox('Parental Status', options=['Yes', 'No'])
+marriage_status = st.selectbox('Marriage Status', options=['Yes', 'No'])
 female = st.selectbox('Female', options=['Yes', 'No'])
 age = st.slider('Age', min_value=18, max_value=100)
 
@@ -97,7 +97,10 @@ parental_status_encoded = 1 if parental_status == 'Yes' else 0
 marriage_status_encoded = 1 if marriage_status == 'Yes' else 0
 female_encoded = 1 if female == 'Yes' else 0
 
-# Button for prediction
+# Creating a feature vector
+features = [[income_range_encoded, education_level_encoded, parental_status_encoded, marriage_status_encoded, female_encoded, age]]
+
+# Centered button for prediction
 if st.button('Prediction'):
     # Make prediction
     prediction = model.predict(features)
@@ -110,3 +113,10 @@ if st.button('Prediction'):
         st.write(f'The model predicts the person is likely to use LinkedIn, with a probability of {proba[1]:.2%}')
     else:
         st.write(f'The model predicts the person is unlikely to use LinkedIn, with a probability of {proba[0]:.2%}')
+
+
+
+
+
+
+
